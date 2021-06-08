@@ -6,19 +6,21 @@ This is a microservice, which allows users to supply either an IP address or an 
 
 ## Calling this from the commandline: 
 
-* To query using an IP address: 
+* To query using a valid IP address: 
 
 ```
 curl http://localhost:8000/addr/10.0.0.2
 {"id:":101,"netmask":"255.255.255.0","hostname":"this.that.net","gateway":"10.0.0.1","addr":"10.0.0.2","VMWareVLAN":"SAM1"}
 ```
 
-* To query using a Fully Qualified Domain Name (FQDN), supply the full name (it must resolve in local DNS, obviously):
+* To query using a valid Fully Qualified Domain Name (FQDN), supply the full name (it must resolve in local DNS, obviously):
 
 ```
 curl http://localhost:8000/fqdn/this.that.net
 {"id:":101,"netmask":"255.255.255.0","hostname":"this.that.net","gateway":"10.0.0.1","addr":"10.0.0.2","VMWareVLAN":"SAM1"}
 ```
+
+* If the supplied IP address or FQDN does not resolve in your local DNS, this will only give you an error (replying 404)
 
 ## Security Posture
 
