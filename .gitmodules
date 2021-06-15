@@ -1,0 +1,3 @@
+[submodule "network_data"]
+	path = network_data
+	url = git@github.com:ualbertalib/network_data.git

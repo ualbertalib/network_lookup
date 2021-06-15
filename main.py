@@ -5,7 +5,10 @@ import ipaddress
 from fastapi import FastAPI, HTTPException
 
 # read a JSON-formatted file detailing the pantheon of VLANs at UAL
-with open('vlans.json', 'r') as myfile:
+#with open('vlans.json', 'r') as myfile:
+    #jsondata = myfile.read()
+
+with open('network_data/vlans.json', 'r') as myfile:
     jsondata = myfile.read()
 
 # transform that into a local datastructure
