@@ -55,6 +55,11 @@ INFO:     Started reloader process [2950773] using statreload
 * You can run it: ```# docker run -d -p 80:8000 nmacgreg/network_lookup```
 * (Some work in progress, here)
 
+## Buildah & Podman: 
+
+* You can use Buildah in compatibility mode; I've added a withBuildah.sh script to demonstrate that
+* To run the container with Podman, the syntax is the same as with Docker: ```# podman run -d -p 80:8000 namcgreg/network_lookup```  (cool!) 
+
 ## Setting up VSCode
 
 * [This Article](https://stackoverflow.com/questions/60205056/debug-fastapi-application-in-vscode), I didn't try this
