@@ -48,17 +48,10 @@ INFO:     Started reloader process [2950773] using statreload
 * "uvicorn", at least for development, and you can install that with: ```dnf install python3-uvicorn```
 * "fastapi" is a library this depends upon, but there's no RPM for it, so: ```pip install fastapi```
 
-## Docker: 
+## Containers
 
-* I've added a Dockerfile; you can call build.sh to build the image locally
-* *Do not push this to a repo like DockerHub, RE: Security!*
-* You can run it: ```# docker run -d -p 80:8000 nmacgreg/network_lookup```
-* (Some work in progress, here)
-
-## Buildah & Podman: 
-
-* You can use Buildah in compatibility mode; I've added a withBuildah.sh script to demonstrate that
-* To run the container with Podman, the syntax is the same as with Docker: ```# podman run -d -p 80:8000 namcgreg/network_lookup```  (cool!) 
+* [This works with Docker](docs/docker.md]
+* [This works with Podman and Buildah](docs/podman.md)
 
 ## Setting up VSCode
 
