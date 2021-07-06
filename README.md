@@ -4,7 +4,20 @@
 
 This is a microservice, which allows users to supply either an IP address or an FQDN, to retrieve the details of the VLAN containing that host.
 
-## Calling this from the commandline: 
+## Cloning this repo
+
+* This repo uses submodules to keep the code public, but our data private, so: ```git clone --recurse-submodules git@github.com:ualbertalib/network_lookup.git```
+* Or see [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
+
+```
+git clone git@github.com:ualbertalib/network_lookup.git
+git submodule init
+git submodule update
+```
+
+* If you're an external user, copy the file "vlans.json" is a template for the input data for this microservice. Copy it to the network_data/ directory & enter your own data.
+
+## Query this microservice from the commandline
 
 * To query using a valid IP address: 
 
@@ -42,10 +55,11 @@ curl http://localhost:8000/fqdn/this.that.net
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 INFO:     Started reloader process [2950773] using statreload
 ```
+
 ## Prerequisites
 
 * python, obviously, and I think you need python 3. I'm running v3.9.2 at inception
-* "uvicorn", at least for development, and you can install that with: ```dnf install python3-uvicorn```
+* "uvicorn", at least for development, and you can install that on RHEL derivatives with: ```dnf install python3-uvicorn```
 * "fastapi" is a library this depends upon, but there's no RPM for it, so: ```pip install fastapi```
 
 ## Containers
