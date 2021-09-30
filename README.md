@@ -41,7 +41,7 @@ curl http://localhost:8000/fqdn/this.that.net
 * FIRM ADVICE: 
     * use a local firewall to both rate-limit and restrict the IP addresses able to reach this service
     * it needs strong authentication
-    * it need encryption
+    * it needs encryption
     * it needs fail2ban watching the log file & protecting the port from evildoers
     * it needs logging for fail2ban 
 * The Github repository is marked PUBLIC, because it contains no actual data
