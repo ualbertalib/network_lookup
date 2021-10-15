@@ -64,7 +64,7 @@ INFO:     Started reloader process [2950773] using statreload
 
 ## Containers
 
-* [This works with Docker](docs/docker.md]
+* [This works with Docker](docs/docker.md)
 * [This works with Podman and Buildah](docs/podman.md)
 
 ## Setting up VSCode
