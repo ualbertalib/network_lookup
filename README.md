@@ -67,6 +67,19 @@ INFO:     Started reloader process [2950773] using statreload
 * [This works with Docker](docs/docker.md)
 * [This works with Podman and Buildah](docs/podman.md)
 
+## Running within Docker
+
+* Like this: 
+
+```
+docker run --restart=always -d -p 80:8000 --volume /root/network_lookup/network_data:/home/ualuser/network_data nmacgreg/network_lookup 
+```
+
+* Notes: 
+    * I used that on node-srv-tst-1 
+    * it ensures that the container will always be restarted, whenever docker starts up
+    * It assumes that the copy of network_data is up to date - you will need to manually pull updates into /root/network_lookup/network_data, ok? 
+
 ## Setting up VSCode
 
 * [This Article](https://stackoverflow.com/questions/60205056/debug-fastapi-application-in-vscode), I didn't try this
