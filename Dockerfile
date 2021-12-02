@@ -1,6 +1,8 @@
 # file:///libroot/ITS_Share/Unix/Projects/2021/Q2/DockerExperiments/volley2.html
 FROM fedora:34
 
+LABEL maintainer="@ualbertalib"
+
 USER root
 
 # This is a python app, that needs 'uvicorn':
