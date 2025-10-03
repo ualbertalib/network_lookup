@@ -1,5 +1,5 @@
 # file:///libroot/ITS_Share/Unix/Projects/2021/Q2/DockerExperiments/volley2.html
-FROM fedora:34
+FROM fedora:42
 
 LABEL maintainer="@ualbertalib"
 
