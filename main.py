@@ -8,8 +8,18 @@ from fastapi import FastAPI, HTTPException
 #with open('vlans.json', 'r') as myfile:
     #jsondata = myfile.read()
 
-with open('network_data/vlans.json', 'r') as myfile:
-    jsondata = myfile.read()
+import sys
+
+try:
+    with open('network_data/vlans.json', 'r') as myfile:
+        jsondata = myfile.read()
+except FileNotFoundError:
+    try:
+        with open('vlans.json', 'r') as myfile:
+            jsondata = myfile.read()
+    except FileNotFoundError:
+        print("Error: vlans.json not found in network_data/ or current directory")
+        sys.exit(1)
 
 # transform that into a local datastructure
 vlans = json.loads(jsondata)
