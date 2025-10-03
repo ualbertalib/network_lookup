@@ -15,11 +15,14 @@ git submodule init
 git submodule update
 ```
 
-* If you're an external user, copy the file "vlans.json" is a template for the input data for this microservice. Copy it to the network_data/ directory & enter your own data.
+* If you're an external user,
+   * the file "vlans.json" is a template for the input data for this microservice.
+   * copy it to the network_data/ directory & populate it with your own data
+   * (or, do it the way we do & make your own private git repo, and make it a "git submodule") 
 
-## Query this microservice from the commandline
+## Query this Microservice from the Commandline
 
-* To query using a valid IP address: 
+* To query using a valid IP address, in a Dev environment: 
 
 ```
 curl http://localhost:8000/addr/10.0.0.2
@@ -67,7 +70,7 @@ INFO:     Started reloader process [2950773] using statreload
 * [This works with Docker](docs/docker.md)
 * [This works with Podman and Buildah](docs/podman.md)
 
-## Running within Docker
+## Running Within Docker
 
 * Like this: 
 
@@ -76,7 +79,6 @@ docker run --restart=always -d -p 80:8000 --volume /root/network_lookup/network_
 ```
 
 * Notes: 
-    * I used that on node-srv-tst-1 
     * it ensures that the container will always be restarted, whenever docker starts up
     * It assumes that the copy of network_data is up to date - you will need to manually pull updates into /root/network_lookup/network_data, ok? 
 
