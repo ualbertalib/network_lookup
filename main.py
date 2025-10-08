@@ -63,7 +63,7 @@ async def addr(item: str):
     # Does that IP address resolve?
     try:
         hostname = socket.gethostbyaddr(item)
-    except socket.error as bad_hostname:
+    except socket.error:
         raise HTTPException(status_code=404, detail="Unable to resolve hostname")
 
     # Loop across the list of IP networks, looking for a match
@@ -97,7 +97,7 @@ async def fqdn(item: str):
     # Resolve that FQDN into an IP address
     try:
         complex_struct = socket.getaddrinfo(item, 80)
-    except (socket.gaierror, IndexError, ConnectionError) as bad_fqdn:
+    except (socket.gaierror, IndexError, ConnectionError):
         raise HTTPException(status_code=404, detail="Cannot resolve hostname")
 
     # That returns a complex data structure... ?
