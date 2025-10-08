@@ -64,7 +64,7 @@ async def addr(item: str):
     try:
         hostname = socket.gethostbyaddr(item)
     except socket.error as bad_hostname:
-        raise HTTPException(status_code=404, detail="Unable to resolve hostname") from bad_hostname
+        raise HTTPException(status_code=404, detail="Unable to resolve hostname")
 
     # Loop across the list of IP networks, looking for a match
     mylimit = len(vlans)
