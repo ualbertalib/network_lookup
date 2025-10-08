@@ -102,7 +102,14 @@ async def fqdn(item: str):
 
     # That returns a complex data structure... ?
     #print(complex_struct)
-    address = complex_struct[0][4][0]
+    #address = complex_struct[0][4][0]
+    # Find the first IPv4 address
+    for family, _, _, _, sockaddr in complex_struct:
+        if family == socket.AF_INET:
+            address = sockaddr[0]
+    if not address:
+        raise HTTPException(status_code=404, detail="Cannot resolve hostname") from bad_fqdn
+
     #print(address)
 
     # Construct an object from that IP address

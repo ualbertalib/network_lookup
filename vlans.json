@@ -1,4 +1,4 @@
 [	
-    { "id": 101, "name": "SAM1", "network": "10.0.0.0/24", "gateway": "10.0.0.1", "purpose": "Accounting", "vmware": "SAM1"},
-    { "id": 102, "name": "SAM2", "network": "10.0.1.0/24", "gateway": "10.0.1.1", "purpose": "M&A",        "vmware": "SAM2"}
+    { "id": 101, "name": "localhost", "network": "127.0.0.0/24", "gateway": "10.0.0.1", "purpose": "Accounting", "vmware": "vmAccounting"},
+    { "id": 102, "name": "gateway.mynet.lan", "network": "10.0.0.0/24", "gateway": "10.0.0.1", "purpose": "M&A", "vmware": "VM M&A"}
 ]
