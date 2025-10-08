@@ -84,7 +84,7 @@ def is_valid_hostname(hostname):
         return False
     if hostname[-1] == ".":
         hostname = hostname[:-1] # strip exactly one dot from the right, if present
-    allowed = re.compile("(?!-)[A-Z\d-]{1,63}(?<!-)$", re.IGNORECASE)
+    allowed = re.compile(r"(?!-)[A-Z\d-]{1,63}(?<!-)$", re.IGNORECASE)
     return all(allowed.match(x) for x in hostname.split("."))
 
 #########################################################################################
@@ -98,7 +98,7 @@ async def fqdn(item: str):
     try:
         complex_struct = socket.getaddrinfo(item, 80)
     except (socket.gaierror, IndexError, ConnectionError) as bad_fqdn:
-        raise HTTPException(status_code=404, detail="Cannot resolve hostname") from bad_fqdn
+        raise HTTPException(status_code=404, detail="Cannot resolve hostname")
 
     # That returns a complex data structure... ?
     #print(complex_struct)
@@ -108,7 +108,7 @@ async def fqdn(item: str):
         if family == socket.AF_INET:
             address = sockaddr[0]
     if not address:
-        raise HTTPException(status_code=404, detail="Cannot resolve hostname") from bad_fqdn
+        raise HTTPException(status_code=404, detail="Cannot resolve hostname")
 
     #print(address)
 
